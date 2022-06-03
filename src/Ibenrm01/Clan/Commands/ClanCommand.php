@@ -7,7 +7,7 @@ use pocketmine\command\{
     PluginCommand,
     CommandSender
 };
-use pocketmine\Player;
+use pocketmine\player\Player;
 use Ibenrm01\Clan\Main;
 use onebone\economyapi\EconomyAPI;
 

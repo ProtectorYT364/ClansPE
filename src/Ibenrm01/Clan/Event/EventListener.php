@@ -2,13 +2,12 @@
 
 namespace Ibenrm01\Clan\Event;
 
-use pocketmine\{
-    Server, Player
-};
+use pocketmine\Server;
+use pocketmine\player\Player;
 use pocketmine\event\Listener;
 use pocketmine\utils\Config;
-use pocketmine\level\{
-    Level, Position
+use pocketmine\world\{
+    World, Position
 };
 use pocketmine\event\player\{
     PlayerDeathEvent, PlayerJoinEvent, PlayerQuitEvent

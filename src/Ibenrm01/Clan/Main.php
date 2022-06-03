@@ -2,16 +2,15 @@
 
 namespace Ibenrm01\Clan;
 
-use pocketmine\{
-    Server, Player
-};
+use pocketmine\Server;
+use pocketmine\player\Player;
 use pocketmine\plugin\{
     Plugin, PluginBase
 };
 use pocketmine\event\Listener;
 use pocketmine\utils\Config;
-use pocketmine\level\{
-    Level, Position
+use pocketmine\world\{
+    World, Position
 };
 use onebone\economyapi\EconomyAPI;
 use pocketmine\command\ConsoleCommandSender;
@@ -23,7 +22,8 @@ class Main extends PluginBase implements Listener {
     //DATABASE CLANS
     public $data;
 
-    public function onEnable(){
+    public function onEnable(): void
+    {
         @mkdir($this->getDataFolder());
         $this->saveDefaultConfig();
         new Config($this->getDataFolder()."database.yml", Config::YAML);
@@ -44,7 +44,8 @@ class Main extends PluginBase implements Listener {
         }
     }
 
-    public function onDisable(){
+    public function onDisable(): void
+    {
         foreach($this->getServer()->getOnlinePlayers() as $pl) :
             if(isset($this->data["players"][$pl->getName()]["invited"])){
                 unset($this->data["players"][$pl->getName()]["invited"]);
